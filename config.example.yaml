@@ -1,0 +1,14 @@
+name: "AC Kitchen"
+id: ac-kitchen
+model: "CT18F NQ0"
+modbus:
+    host: 192.168.1.69
+    port: 502
+    slave: 1
+    poll_interval: 1
+mqtt:
+    host: 192.168.1.42
+    port: 1883
+    keepalive: 60
+    username: USER
+    password: PASSWORD
