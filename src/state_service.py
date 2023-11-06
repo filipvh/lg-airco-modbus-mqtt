@@ -31,7 +31,7 @@ class StateService:
             self._process_changes(delta_state)
 
     def _process_changes(self, delta_state: State):
-        logger.debug(f"Changed state: {delta_state}")
+        logger.debug(f"State  | Changed state: {delta_state}")
         self.state_changed.fire(delta_state)
 
     def get_state(self) -> State:
