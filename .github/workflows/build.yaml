@@ -40,4 +40,4 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: registry.hub.docker.com/${{ secrets.REGISTRY_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}
-
+          platforms: linux/amd64,linux/arm64
