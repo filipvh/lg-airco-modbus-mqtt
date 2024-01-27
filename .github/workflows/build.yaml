@@ -41,3 +41,19 @@ jobs:
           push: true
           tags: registry.hub.docker.com/${{ secrets.REGISTRY_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}
           platforms: linux/amd64,linux/arm64
+
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          tag_name: ${{ env.VERSION }}
+          release_name: Release ${{ env.VERSION }}
+          body: |
+            Changes in this Release:
+            - Docker image for version ${{ env.VERSION }} available at: 
+              `registry.hub.docker.com/${{ secrets.REGISTRY_USERNAME }}/${{ github.event.repository.name }}:${{ env.VERSION }}`
+          draft: false
+          prerelease: false
