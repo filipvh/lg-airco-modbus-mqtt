@@ -27,7 +27,7 @@ class Config(BaseModel):
 
 
 def load_config():
-    with open('config.yaml', 'r') as f:
+    with open('config/config.yaml', 'r') as f:
         raw_config = yaml.safe_load(f)
         config = Config(**raw_config)
         return config
